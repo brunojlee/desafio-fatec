@@ -1,12 +1,12 @@
+import FeedbackProvider from "./context/FeedbackProvider";
+import Routes from "./Routes";
 
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h2>Welcome</h2>
-      </header>
-    </div>
+    <FeedbackProvider>
+      <Routes />
+    </FeedbackProvider>
   );
 }
 
