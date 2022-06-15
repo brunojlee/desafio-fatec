@@ -1,0 +1,14 @@
+.login_container {
+  margin: auto;
+  padding: auto;
+  display: flexbox;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 150px;
+}
+
+.login_image {
+  width: 150px;
+}
