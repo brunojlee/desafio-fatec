@@ -26,7 +26,7 @@ function LoginCard() {
   const handleClick = () => {
     localStorage.setItem('user', JSON.stringify({ email: userEmail }));
     setLoading(true);
-    navigate('/feedback');
+    navigate('/question');
   };
 
   useEffect(() => {
