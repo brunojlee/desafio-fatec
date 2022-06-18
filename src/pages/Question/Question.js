@@ -1,4 +1,3 @@
-import React from 'react'
 import QuestionCard from '../../components/QuestionCard/QuestionCard'
 import './Question.css'
 

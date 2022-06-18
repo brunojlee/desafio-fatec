@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import FeedbackContext from './FeedbackContext';
 
 function FeedbackProvider({ children }) {
@@ -7,6 +7,8 @@ function FeedbackProvider({ children }) {
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
+  const [questionList, setQuestionList] = useState([]);
+  const [lastId, setLastId] = useState(0);
 
   const context = {
     userEmail,
@@ -16,7 +18,11 @@ function FeedbackProvider({ children }) {
     loading,
     setLoading,
     isButtonDisabled,
-    setIsButtonDisabled
+    setIsButtonDisabled,
+    questionList, 
+    setQuestionList,
+    lastId,
+    setLastId
   };
 
   return (
