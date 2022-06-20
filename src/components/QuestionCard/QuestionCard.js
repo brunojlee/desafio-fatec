@@ -24,6 +24,7 @@ export default function QuestionCard() {
       ...prevValues,
       id,
       [value.target.name]: value.target.value,
+      answer: "",
     }));
   };
 
@@ -56,6 +57,7 @@ export default function QuestionCard() {
         questionList && questionList.map((e) => (
           <div key={e.id}>
             <p>{e.question}</p>
+            {e.answer && <p>{e.answer}</p>}
           </div>
         ))
       }

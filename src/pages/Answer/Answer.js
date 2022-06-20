@@ -29,24 +29,37 @@ export default function Answer() {
     const id = target.id;
     const question = questionList.find((e) => e.id === +id);
     question.answer = values.answer;
-    const newQuestionList = await questionList.filter((e) => e.id !== id);
+    const newQuestionList = await questionList.filter((e) => e.id !== +id);
     await setQuestionList([...newQuestionList, question]);
     setLoading(false);
     console.log(questionList);
   }
 
+  useEffect(() => {
+    localStorage.setItem("questionList", JSON.stringify(questionList));
+
+  }, [questionList]);
+
   return (
     <div>
       {!loading && questionList.map((e) => 
         <div className={`question_card_${e.id}`} key={e.id}>
-          <div>{e.id}</div>
+          <div>Número da questão {e.id}</div>
           <div>{e.question}</div>
-          <textarea
-            placeholder="Digite a resposta" className="form-control"
-            type="text"
-            name="answer"
-            onChange={handleValues}/>
-            <button id={e.id} className="btn btn-success" onClick={handleClick}>Responder</button>
+          {
+            e.answer && <div>{e.answer}</div>
+          }
+          {
+            !e.answer && 
+            <>
+              <textarea
+              placeholder="Digite a resposta" className="form-control"
+              type="text"
+              name="answer"
+              onChange={handleValues}/>
+              <button id={e.id} className="btn btn-success" onClick={handleClick}>Responder</button>
+            </>
+          }
         </div>
       )}
     </div>
