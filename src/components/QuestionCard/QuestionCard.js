@@ -5,7 +5,7 @@ import FeedbackContext from "../../context/FeedbackContext";
 import './QuestionCard.css';
 
 export default function QuestionCard() {
-  const [values, setValues] = useState();
+  const [values, setValues] = useState({id: 0, question: '', answer: ''});
   const [lastId, setLastId] = useState();
   const {
     userEmail,
@@ -29,16 +29,20 @@ export default function QuestionCard() {
       ...prevValues,
       id,
       [value.target.name]: value.target.value,
-      answer: "",
     }));
   };
 
   const handleClick = () => {
-    setQuestionList((prevQuestionList) => [
-      ...prevQuestionList,
-      values,
-    ]);
-    setLastId((prevLastId) => prevLastId + 1);
+    if(values.question.length > 0){
+      setQuestionList((prevQuestionList) => [
+        ...prevQuestionList,
+        values,
+      ]);
+      setLastId((prevLastId) => prevLastId + 1);
+      setValues({id: 0, question: ''});
+    } else{
+      alert("Preencha o campo de pergunta");
+    }
   }
 
   useEffect(() => {
@@ -51,14 +55,15 @@ export default function QuestionCard() {
       <div className="question_container">
         Bem vindo {userEmail}
         <textarea
-        placeholder="Digite sua pergunta" className="form-control"
+        placeholder="Digite sua pergunta" className="form-control question_textarea"
         type="text"
         name="question"
+        value={values.question}
         onChange={handleValues}/>
       <button className="btn btn-success" onClick={handleClick}>Perguntar</button>
       {
         questionList && questionList.map((e) => (
-          <div key={e.id}>
+          <div  className="question_card_container" key={e.id}>
              <AnswerCard object={e} />
           </div>
         ))

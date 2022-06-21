@@ -9,3 +9,13 @@
   padding: 0 10%;
   width: 100%;
 }
+
+.question_card_container {
+  background-color: green;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 100%;
+  width: 100%;
+}

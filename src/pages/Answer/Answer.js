@@ -26,14 +26,18 @@ export default function Answer() {
   };
 
   const handleClick = async ({target}) => {
+    if(values.answer.length > 0){
     setLoading(true);
     const id = target.id;
     const question = questionList.find((e) => e.id === +id);
     question.answer = values.answer;
     const newQuestionList = await questionList.filter((e) => e.id !== +id);
     await setQuestionList([...newQuestionList, question]);
+    setValues({answer: ''})
     setLoading(false);
-    console.log(questionList);
+    } else{
+      alert("Preencha o campo de resposta");
+    }
   }
 
   useEffect(() => {
@@ -42,10 +46,10 @@ export default function Answer() {
   }, [questionList]);
 
   return (
-    <div className="answer_container">
+    <div>
       {!loading && questionList.map((e) => 
-        <div className={`answer_card_${e.id}`} key={e.id}>
-          <AnswerCard object={e} />
+        <div className="answer_container">
+          <AnswerCard key={e.id} object={e} />
           {
             !e.answer && 
             <>
