@@ -2,6 +2,7 @@
 import { useContext, useEffect, useState } from "react";
 import AnswerCard from "../../components/AnswerCard/AnswerCard";
 import FeedbackContext from "../../context/FeedbackContext";
+import './QuestionCard.css';
 
 export default function QuestionCard() {
   const [values, setValues] = useState();
@@ -54,7 +55,6 @@ export default function QuestionCard() {
         type="text"
         name="question"
         onChange={handleValues}/>
-      </div>
       <button className="btn btn-success" onClick={handleClick}>Perguntar</button>
       {
         questionList && questionList.map((e) => (
@@ -63,6 +63,7 @@ export default function QuestionCard() {
           </div>
         ))
       }
+      </div>
       </>
   )
 }

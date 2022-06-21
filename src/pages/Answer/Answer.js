@@ -42,9 +42,9 @@ export default function Answer() {
   }, [questionList]);
 
   return (
-    <div className="question_container">
+    <div className="answer_container">
       {!loading && questionList.map((e) => 
-        <div className={`question_card_${e.id}`} key={e.id}>
+        <div className={`answer_card_${e.id}`} key={e.id}>
           <AnswerCard object={e} />
           {
             !e.answer && 
