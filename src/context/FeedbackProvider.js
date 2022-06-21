@@ -8,7 +8,6 @@ function FeedbackProvider({ children }) {
   const [loading, setLoading] = useState(false);
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
   const [questionList, setQuestionList] = useState([]);
-  const [lastId, setLastId] = useState(0);
 
   const context = {
     userEmail,
@@ -21,8 +20,6 @@ function FeedbackProvider({ children }) {
     setIsButtonDisabled,
     questionList, 
     setQuestionList,
-    lastId,
-    setLastId
   };
 
   return (

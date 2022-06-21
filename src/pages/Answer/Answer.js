@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useContext, useEffect, useState } from "react";
+import AnswerCard from "../../components/AnswerCard/AnswerCard";
 import FeedbackContext from "../../context/FeedbackContext";
 import "./Answer.css";
 
@@ -41,14 +42,10 @@ export default function Answer() {
   }, [questionList]);
 
   return (
-    <div>
+    <div className="question_container">
       {!loading && questionList.map((e) => 
         <div className={`question_card_${e.id}`} key={e.id}>
-          <div>Número da questão {e.id}</div>
-          <div>{e.question}</div>
-          {
-            e.answer && <div>{e.answer}</div>
-          }
+          <AnswerCard object={e} />
           {
             !e.answer && 
             <>

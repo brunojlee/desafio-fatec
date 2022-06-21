@@ -1,20 +1,24 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useContext, useEffect, useState } from "react";
+import AnswerCard from "../../components/AnswerCard/AnswerCard";
 import FeedbackContext from "../../context/FeedbackContext";
 
 export default function QuestionCard() {
   const [values, setValues] = useState();
+  const [lastId, setLastId] = useState();
   const {
     userEmail,
     questionList,
     setQuestionList,
-    lastId,
-    setLastId} = useContext(FeedbackContext);
+  } = useContext(FeedbackContext);
 
   useEffect(() => {
     const questionListLS = localStorage.getItem("questionList");
     if (questionListLS) {
       setQuestionList(JSON.parse(questionListLS));
+      setLastId(JSON.parse(questionListLS).length);
+    } else{
+      setLastId(0);
     }
   }, []);
   
@@ -41,7 +45,6 @@ export default function QuestionCard() {
 
   }, [questionList]);
 
-
   return (
     <>
       <div className="question_container">
@@ -56,8 +59,7 @@ export default function QuestionCard() {
       {
         questionList && questionList.map((e) => (
           <div key={e.id}>
-            <p>{e.question}</p>
-            {e.answer && <p>{e.answer}</p>}
+             <AnswerCard object={e} />
           </div>
         ))
       }
