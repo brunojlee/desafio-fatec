@@ -1,6 +1,7 @@
 {
   "name": "desafio-fatec",
   "version": "0.1.0",
+  "homepage": "/desafio-fatec",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
