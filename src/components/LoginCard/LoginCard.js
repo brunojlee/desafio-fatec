@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import { useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import FeedbackContext from '../../context/FeedbackContext';
 import './LoginCard.css';
@@ -26,7 +26,11 @@ function LoginCard() {
   const handleClick = () => {
     localStorage.setItem('user', JSON.stringify({ email: userEmail }));
     setLoading(true);
-    navigate('/question');
+    if(userEmail === 'admin@agatecnologia.com'){
+      navigate('/question');
+    } else{
+      navigate('/answer');
+    }
   };
 
   useEffect(() => {
@@ -75,7 +79,7 @@ function LoginCard() {
           className="login_button"
           disabled={ isButtonDisabled }
           type="button"
-          onClick={ () => handleClick() }
+          onClick={ handleClick }
         >
           Entrar
         </button>
