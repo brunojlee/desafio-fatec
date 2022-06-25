@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/desafio-fatec/static/css/main.2fa96b26.css",
+    "main.js": "/desafio-fatec/static/js/main.a85d3374.js",
+    "static/media/logo.png": "/desafio-fatec/static/media/logo.b428b07b4533833f4c8e.png",
+    "index.html": "/desafio-fatec/index.html",
+    "main.2fa96b26.css.map": "/desafio-fatec/static/css/main.2fa96b26.css.map",
+    "main.a85d3374.js.map": "/desafio-fatec/static/js/main.a85d3374.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2fa96b26.css",
+    "static/js/main.a85d3374.js"
+  ]
+}
