@@ -55,28 +55,36 @@ function LoginCard() {
         alt="logo app"
       />
       <form className="input_container">
-        <label className="email_label" htmlFor="email">
+        <div className='form-floating h-50 mb-3'>
           <input
-            className="email_input"
+            className="email_input form-control"
+            id="floatingInput"
             type="email"
             name="email"
-            placeholder="Email"
+            placeholder="name@example.com"
             value={ userEmail }
             onChange={ (event) => handleEmail(event) }
           />
-        </label>
-        <label className="password_label" htmlFor="password">
+          <label className="email_label" for="floatingInput">
+            Email address
+          </label>
+        </div>
+        <div className='form-floating h-50 mb-3'>
           <input
-            className="password_input"
+            className="password_input form-control"
+            id="floatingPassword"
             type="password"
             name="password"
             placeholder="Senha"
             value={ password }
             onChange={ (event) => handlePassword(event) }
           />
-        </label>
+          <label className="password_label" for="floatingPassword">
+            Password
+          </label>
+        </div>
         <button
-          className="login_button"
+          className="login_button btn btn-primary"
           disabled={ isButtonDisabled }
           type="button"
           onClick={ handleClick }
