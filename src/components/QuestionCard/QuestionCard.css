@@ -1,5 +1,5 @@
 .question_container {
-  background-color: green;
+  background-color: rgba(255, 255, 255, 0.15);
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -11,7 +11,6 @@
 }
 
 .question_card_container {
-  background-color: green;
   align-items: center;
   display: flex;
   flex-direction: column;

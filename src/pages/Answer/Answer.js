@@ -58,7 +58,7 @@ export default function Answer() {
               type="text"
               name="answer"
               onChange={handleValues}/>
-              <button id={e.id} className="btn btn-success" onClick={handleClick}>Responder</button>
+              <button id={e.id} type="button" className="btn btn-success w-100" onClick={handleClick}>Responder</button>
             </>
           }
         </div>

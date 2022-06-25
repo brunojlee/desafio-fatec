@@ -60,7 +60,7 @@ export default function QuestionCard() {
         name="question"
         value={values.question}
         onChange={handleValues}/>
-      <button className="btn btn-success" onClick={handleClick}>Perguntar</button>
+      <button className="btn btn-success w-100" onClick={handleClick}>Enviar</button>
       {
         questionList && questionList.map((e) => (
           <div  className="question_card_container" key={e.id}>
