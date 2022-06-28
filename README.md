@@ -1,10 +1,10 @@
-<p align="center"><img width='150px' src='https://github.com/brunojlee/desafio-fatec/blob/main/repo/media/readmeAnimation.gif' />
+<p align="center"><img width='150px' src='https://github.com/brunojlee/desafio-fatec/blob/dev/bruno-roja/repo/media/readmeAnimation.gif' />
 <h1 align="center"> Feedback Responsive Page </h1>
 <h2 align="center">GitHub Pages:</h2>
  
  <div align="center">
    <a href="https://brunojlee.github.io/desafio-fatec/" target="_blank">
-    <img width='100px' src='https://github.com/brunojlee/desafio-fatec/blob/main/repo/media/bgGH.jpg' target="_blank" />
+    <img width='100px' src='https://github.com/brunojlee/desafio-fatec/blob/dev/bruno-roja/repo/media/bgGH.jpg' target="_blank" />
  </div>
  
 <h5 align="center">Clique na imagem</h5>
